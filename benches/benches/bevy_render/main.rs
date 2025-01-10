@@ -1,6 +1,6 @@
 use criterion::criterion_main;
 
 mod render_layers;
-mod torus;
+mod mesh_builder;
 
-criterion_main!(render_layers::benches, torus::benches);
+criterion_main!(render_layers::benches, mesh_builder::benches);
