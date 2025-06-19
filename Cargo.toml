@@ -30,6 +30,8 @@ members = [
   "examples/no_std/*",
   # Benchmarks
   "benches",
+  # Valgrind Benchmarks
+  "benches-iai",
   # Internal tools that are not published.
   "tools/*",
   # Bevy's error codes. This is a crate so we can automatically check all of the code blocks.
@@ -4295,6 +4297,10 @@ codegen-units = 1
 inherits = "release"
 lto = "fat"
 panic = "abort"
+
+[profile.bench]
+# Required for `iai-callgrind`.
+debug = true
 
 [package.metadata.docs.rs]
 # This cfg is needed so that #[doc(fake_variadic)] is correctly propagated for

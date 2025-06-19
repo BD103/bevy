@@ -1,0 +1,17 @@
+[package]
+name = "valgrind-benches"
+edition = "2024"
+publish = false
+license = "MIT OR Apache-2.0"
+autobenches = false
+
+[dev-dependencies]
+# The benchmark harness.
+iai-callgrind = "0.14.2"
+
+# The crates being benchmarked.
+bevy_ecs = { path = "../crates/bevy_ecs" }
+
+[[bench]]
+name = "ecs"
+harness = false
