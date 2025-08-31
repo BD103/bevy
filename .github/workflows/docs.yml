@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     # Only run this job when on the main Bevy repository. Without this, it would also run on forks
     # where developers work on the main branch but have not enabled Github Pages.
-    if: ${{ github.repository == 'bevyengine/bevy' }}
+    # if: ${{ github.repository == 'bevyengine/bevy' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -91,6 +91,6 @@ jobs:
         with:
           path: target/doc
 
-      - name: Deploy to Github Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      # - name: Deploy to Github Pages
+      #   id: deployment
+      #   uses: actions/deploy-pages@v4
